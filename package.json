@@ -1,0 +1,24 @@
+{
+  "name": "tic_tac_toe_v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olguta150/tic_tac_toe_v1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olguta150/tic_tac_toe_v1/issues"
+  },
+  "homepage": "https://github.com/Olguta150/tic_tac_toe_v1#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "prettier": "2.8.4"
+  }
+}
