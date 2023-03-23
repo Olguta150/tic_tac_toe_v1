@@ -22,8 +22,13 @@ const DisplayController = (function() {
     const playRound = () => {
         for(let i = 0; i < cellNum.length; i++) {
             cellNum[i].onclick = () => {
-                board.splice(i, 1, getActivePlayer().getToken());
+                if(board[i] != null) {
+                    return;
+                } else {
+                    board.splice(i, 1, getActivePlayer().getToken());
+                }
                 Gameboard.play();
+                console.log("cellNum[i]: ", cellNum[i]);
                 console.log(board);
                 console.log(getActivePlayer().getName(), ": ", getActivePlayer().getToken());
                 switchPlayerTurn();
