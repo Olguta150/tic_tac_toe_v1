@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: #eae0d5;
 }
 
 .board {
@@ -29,11 +36,60 @@
     opacity: 0;
     transform: rotateX(-90deg);
     transform-origin: top center;
+    border: 2px solid #6d6875;
+}
+
+.result-board {
+    position: absolute;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 300px;
+    background: #56ab91;
+    border: 1px solid #000;
+    animation: showResult 500ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+}
+
+.result-text {
+    font-family: 'Alkatra', cursive;
+    font-size: 40px;
+}
+
+.buttons button {
+    width: 170px;
+    padding: 15px 28px;
+    margin-right: 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    background: #99e2b4;
+    font-family: 'Roboto Slab', serif;
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.5), inset 3px 3px 4px 0px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
 }
 
 @keyframes show {
     100% {
         opacity: 1;
         transform: none;
+    }
+}
+
+@keyframes showResult {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
     }
 }
