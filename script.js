@@ -10,13 +10,14 @@ const Player = (name, token) => {
 }
 
 const DisplayController = (function() {
-    const anne = Player('Anne', 'X');
-    const runa = Player('Runa', 'O');
-    const players = [anne, runa];
-    let activePlayer = players[0];
+    const resultBoard = document.querySelector('.result-board');
+    const resultText = document.querySelector('.result-text');
+    const player1 = Player('Anne', 'X');
+    const player2 = Player('Runa', 'O');
+    let activePlayer = player1;
 
     const switchPlayerTurn = () => {
-        activePlayer = activePlayer === players[0] ? players[1] : players[0];
+        activePlayer = activePlayer === player1 ? player2 : player1;
     }
 
     const getActivePlayer = () => activePlayer;
@@ -42,12 +43,16 @@ const DisplayController = (function() {
             }
         }
         if(roundWin) {
-            console.log(getActivePlayer().getName(), " won!");
+            resultBoard.style.display = 'flex';
+            resultText.textContent = `${getActivePlayer().getName()} won!`;
         }
     }
 
     const draw = () => {
-        if(!board.includes('')) console.log('no empty spots');
+        if(!board.includes('')) {
+            resultBoard.style.display = 'flex';
+            resultText.textContent = `Draw!`;
+        }
     };
 
     const playRound = () => {
