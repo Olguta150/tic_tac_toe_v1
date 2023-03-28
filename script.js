@@ -1,6 +1,6 @@
 // const { check } = require("prettier");
 
-const board = ['', '', '', '', '', '', '', '', ''];
+let board = ['', '', '', '', '', '', '', '', ''];
 const cellNum = document.querySelectorAll('.cell');
 
 const Player = (name, token) => {
@@ -12,6 +12,7 @@ const Player = (name, token) => {
 const DisplayController = (function() {
     const resultBoard = document.querySelector('.result-board');
     const resultText = document.querySelector('.result-text');
+    const playAgainBtn = document.querySelector('.play-again');
     const player1 = Player('Anne', 'X');
     const player2 = Player('Runa', 'O');
     let activePlayer = player1;
@@ -28,6 +29,12 @@ const DisplayController = (function() {
         [1, 4, 7], [2, 5, 8],
         [0, 4, 8], [2, 4, 6]
     ];
+
+    const playAgainFunc = () => {
+        resultBoard.style.display = 'none';
+        board = ['', '', '', '', '', '', '', '', ''];
+        Gameboard.play();
+    }
 
     const checkWin = () => {
         let roundWin = false;
@@ -66,6 +73,7 @@ const DisplayController = (function() {
                 Gameboard.play();
                 checkWin();
                 draw();
+                playAgainBtn.onclick = () => playAgainFunc();
                 console.log(board);
                 console.log(getActivePlayer().getName(), ": ", getActivePlayer().getToken());
                 switchPlayerTurn();
