@@ -13,7 +13,6 @@ body {
 
 .board {
     display: none;
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -43,7 +42,6 @@ body {
 .result-board {
     position: absolute;
     display: none;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -80,7 +78,6 @@ body {
 }
 
 .home {
-    /* display: none; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,7 +109,6 @@ body {
 
 .players {
     display: none;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -136,29 +132,14 @@ body {
     padding: 10px 15px;
     background: none;
     font-size: 19px;
-    /* font-family: 'Roboto Slab', serif; */
     transition: 0.5s;
 }
 
 .player-form input:focus {
     outline: none;
     border: none;
-    /* border-bottom: 2px solid #000; */
     box-shadow: inset -4px -4px 6px 0px rgba(255, 255, 255, 0.5), inset 4px 4px 6px 0px rgba(0, 0, 0, 0.7);
 }
-
-/* .player-form label {
-    position: absolute;
-    font-size: 19px;
-    color:rgba(0, 0, 0, 0.7);
-    transition: 0.5s;
-}
-
-.player-form input:focus + label {
-    transform: translateY(-35px);
-    font-size: 21px;
-    color: #000;
-} */
 
 .player-form .player {
     display: flex;
@@ -177,6 +158,23 @@ body {
     transform: scale(1);
     transition: 0.5s;
     cursor: pointer;
+}
+
+.warning {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+    width: 600px;
+    height: 70px;
+    border-radius: 3px;
+    background: #d90429;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2), inset 4px 4px 6px 0px rgba(255, 255, 255, 0.2), inset -4px -4px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes show {
